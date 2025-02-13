@@ -30,22 +30,169 @@ void CrearTriangulo()
 {
 
 	GLfloat vertices[] = {
-	-0.75f, 0.75f, 0.0f,  // Hace la primera mitade del cuadrado
-	 0.0f, 0.75f, 0.0f,  
-	 -0.75f,  0.0f, 0.0f, 
+	-0.78f, 0.3f, 0.0f,  // Triangulo 1
+	 -0.7f, 0.3f, 0.0f,  
+	 -0.7f,  -0.2f, 0.0f, 
 
-	0.0f,  0.0f, 0.0f,  // Hace la segunda mitade del cuadrado4
-	0.0f, 0.75f, 0.0f,  
-	 -0.75f,  0.0f, 0.0f,
+	-0.78f,  0.3f, 0.0f,  // Triangulo 2
+	-0.78f, -0.2f, 0.0f,  
+	 -0.7f,  -0.2f, 0.0f,
 
-	 0.0f, -0.5f, 0.0f,  // Hace la primera mitade del rombo
-	 0.5f, 0.0f, 0.0f,  
-	 0.5f,  -1.0f, 0.0f,  
+	 -0.7f, 0.3f, 0.0f,  // Triangulo 3
+	 -0.7f, 0.2f, 0.0f,  
+	 -0.6f,  0.2f, 0.0f,  
 
-	 0.5f, 0.0f, 0.0f,  // Hace la segunda mitade del rombo
-	 0.5f,  -1.0f, 0.0f,  
-	 1.0f,  -0.5f, 0.0f    
+	 -0.7f, 0.3f, 0.0f,  // Triangulo 4
+	 -0.6f,  0.3f, 0.0f,  
+	 -0.6f,  0.2f, 0.0f,   
 
+	 -0.6f, 0.3f, 0.0f,  // Triangulo 5
+	 -0.6f,  0.2f, 0.0f,
+	 -0.5f,  0.2f, 0.0f,
+	
+	 -0.6f, 0.2f, 0.0f,  // Triangulo 6
+	 -0.5f,  0.2f, 0.0f,
+	 -0.6f,  0.1f, 0.0f,
+
+	 -0.5f, 0.2f, 0.0f,  // Triangulo 7
+	 -0.5f,  0.1f, 0.0f,
+	 -0.6f,  0.1f, 0.0f,
+
+	 -0.5f, 0.1f, 0.0f,  // Triangulo 8
+	 -0.6f,  0.1f, 0.0f,
+	 -0.6f,  0.05f, 0.0f,
+
+	 -0.5f, 0.0f, 0.0f,  // Triangulo 9
+	 -0.6f,  0.0f, 0.0f,
+	 -0.6f,  0.05f, 0.0f,
+
+	 -0.5f, 0.0f, 0.0f,  // Triangulo 10
+	 -0.6f,  0.0f, 0.0f,
+	 -0.6f,  -0.1f, 0.0f,
+
+	 -0.5f, 0.0f, 0.0f,  // Triangulo 11
+	 -0.6f,  -0.1f, 0.0f,
+	 -0.5f,  -0.1f, 0.0f,
+
+	 -0.5f, -0.1f, 0.0f,  // Triangulo 12
+	 -0.6f,  -0.1f, 0.0f,
+	 -0.6f,  -0.2f, 0.0f,
+
+	
+	 -0.7f, -0.2f, 0.0f,  // Triangulo 13
+	 -0.6f,  -0.2f, 0.0f,
+	 -0.6f,  -0.1f, 0.0f,
+
+	 -0.6f, -0.1f, 0.0f,  // Triangulo 14
+	 -0.7f,  -0.1f, 0.0f,
+	 -0.7f,  -0.2f, 0.0f,
+
+	 -0.7f, 0.0f, 0.0f,  // Triangulo 15
+	 -0.6f,  0.0f, 0.0f,
+	 -0.6f,  0.1f, 0.0f,
+
+	 -0.6f, 0.1f, 0.0f,  // Triangulo 16
+	 -0.7f,  0.1f, 0.0f,
+	 -0.7f,  0.0f, 0.0f,
+	 // Comienza la leta L
+
+     -0.38f, 0.3f, 0.0f,  // Triangulo 1
+	 -0.3f, 0.3f, 0.0f,
+	 -0.3f,  -0.2f, 0.0f,
+
+	 -0.38f,  0.3f, 0.0f,  // Triangulo 2
+	 -0.38f, -0.2f, 0.0f,
+	 -0.3f,  -0.2f, 0.0f,
+
+	 -0.3f, -0.1f, 0.0f,  // Triangulo 3
+	 -0.1f,  -0.2f, 0.0f,
+	 -0.1f,  -0.1f, 0.0f,
+
+	 -0.1f, -0.2f, 0.0f,  // Triangulo 4
+	 -0.3f,  -0.1f, 0.0f,
+	 -0.3f,  -0.2f, 0.0f,
+
+	 //comienza la letra F
+
+	 0.02f, 0.3f, 0.0f,  // Triangulo 1
+	 0.1f, 0.3f, 0.0f,
+	 0.1f,  -0.2f, 0.0f,
+
+	 0.02f,  0.3f, 0.0f,  // Triangulo 2
+	 0.02f, -0.2f, 0.0f,
+	 0.1f,  -0.2f, 0.0f,
+
+	 0.1f, 0.3f, 0.0f,  // Triangulo 3
+	 0.1f, 0.2f, 0.0f,
+	 0.3f,  0.3f, 0.0f,
+
+	 0.3f, 0.3f, 0.0f,  // Triangulo 4
+	 0.3f,  0.2f, 0.0f,
+	 0.1f,  0.2f, 0.0f,
+
+
+	 0.1f, 0.1f, 0.0f,  // Triangulo 5
+	 0.1f, 0.0f, 0.0f,
+	 0.3f, 0.1f, 0.0f,
+
+	 0.3f, 0.0f, 0.0f,  // Triangulo 6
+	 0.3f, 0.1f, 0.0f,
+	 0.1f, 0.0f, 0.0f,
+
+	 // Comienza la letra R
+
+		 0.42f, 0.3f, 0.0f,  // Triangulo 1
+		 0.5f, 0.3f, 0.0f,
+		 0.5f, -0.2f, 0.0f,
+
+		 0.42f, 0.3f, 0.0f,  // Triangulo 2
+		 0.42f, -0.2f, 0.0f,
+		 0.5f, -0.2f, 0.0f,
+
+		 0.5f, 0.3f, 0.0f,  // Triangulo 3
+		 0.5f, 0.2f, 0.0f,
+		 0.7f, 0.3f, 0.0f,
+
+		 0.7f, 0.3f, 0.0f,  // Triangulo 4
+		 0.7f, 0.2f, 0.0f,
+		 0.5f, 0.2f, 0.0f,
+
+
+		 0.5f, 0.1f, 0.0f,  // Triangulo 5
+		 0.5f, 0.0f, 0.0f,
+		 0.7f, 0.1f, 0.0f,
+
+		 0.7f, 0.0f, 0.0f,  // Triangulo 6
+		 0.7f, 0.1f, 0.0f,
+		 0.5f, 0.0f, 0.0f,
+
+		 0.7f, 0.2f, 0.0f,  // Triangulo 7
+		 0.75f, 0.2f, 0.0f,
+		 0.7f, 0.1f, 0.0f,
+
+		 0.75f, 0.2f, 0.0f,  // Triangulo 8
+		 0.75f, 0.1f, 0.0f,
+		 0.7f, 0.1f, 0.0f,
+
+		 0.75f, 0.2f, 0.0f,  // Triangulo 8
+		 0.7f, 0.2f, 0.0f,
+		 0.7f, 0.3f, 0.0f,
+
+		 0.75f, 0.1f, 0.0f,  // Triangulo 8
+		 0.7f, 0.1f, 0.0f,
+		 0.7f, 0.05f, 0.0f,
+
+		 0.75f, 0.0f, 0.0f,  // Triangulo 8
+		 0.7f, 0.05f, 0.0f,
+		 0.7f, 0.0f, 0.0f,
+
+		 0.65f, 0.0f, 0.0f,  // Triangulo 1
+		 0.75f, 0.0f, 0.0f,
+		 0.75f, -0.2f, 0.0f,
+
+		 0.65f, 0.0f, 0.0f,  // Triangulo 2
+		 0.65f, -0.2f, 0.0f,
+		 0.75f, -0.2f, 0.0f,
 	};
 
 	glGenVertexArrays(1, &VAO); //generar 1 VAO
@@ -196,14 +343,14 @@ int main()
 			glfwPollEvents();
 
 			//Limpiar la ventana
-			glClearColor(colores[i][0], colores[i][1], colores[i][2], colores[i][3]); // Fondo verde
+			glClearColor(0.0f, 0.0f, 1.0f, 0.0f ); // Fondo verde
 
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			glUseProgram(shader);
 
 			glBindVertexArray(VAO);
-			glDrawArrays(GL_TRIANGLES, 0, 12);
+			glDrawArrays(GL_TRIANGLES, 0, 118);
 			glBindVertexArray(0);
 
 			glUseProgram(0);
