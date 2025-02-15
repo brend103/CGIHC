@@ -2,6 +2,7 @@
 #include <string.h>
 #include <glew.h>
 #include <glfw3.h>
+#include <cstdlib> // para usar la funcion rand
 //Dimensiones de la ventana
 const int WIDTH = 800, HEIGHT = 600;
 GLuint VAO, VBO, shader;
@@ -267,6 +268,9 @@ void CompileShaders() {
 
 
 }
+float rojo = 0;
+float verde = 0;
+float azul = 0;
 GLfloat colores[3][4] = {
  1.0f, 0.0f, 0.0f, 0.0f, // Rojo 
  0.0f, 01.0f, 0.0f, 0.0f, // Verde 
@@ -274,7 +278,7 @@ GLfloat colores[3][4] = {
 }; 
 void esperarUnSegundo() {
 	double startTime = glfwGetTime(); // Obtener el tiempo actual
-	while (glfwGetTime() - startTime < 1.0) { // Esperar 1 segundo
+	while (glfwGetTime() - startTime < 2.0) { // Esperar 2 segundo
 		glfwPollEvents(); // Seguir procesando eventos de la ventana
 	}
 }
@@ -337,13 +341,14 @@ int main()
 	//Loop mientras no se cierra la ventana
 	while (!glfwWindowShouldClose(mainWindow))
 	{
-		int i = 0;
-		do {
+	
 			//Recibir eventos del usuario
 			glfwPollEvents();
-
+			rojo = static_cast<float>(rand()) / RAND_MAX;
+			verde = static_cast<float>(rand()) / RAND_MAX;
+			azul = static_cast<float>(rand()) / RAND_MAX;
 			//Limpiar la ventana
-			glClearColor(0.0f, 0.0f, 1.0f, 0.0f ); // Fondo verde
+			glClearColor(rojo, verde, azul, 0.0f ); // Fondo verde
 
 			glClear(GL_COLOR_BUFFER_BIT);
 
@@ -356,9 +361,9 @@ int main()
 			glUseProgram(0);
 
 			glfwSwapBuffers(mainWindow);
-			i++;
+	
 			esperarUnSegundo();
-		} while (i < 3);
+	
 
 	}
 
