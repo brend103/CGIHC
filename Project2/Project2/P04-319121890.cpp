@@ -322,7 +322,7 @@ int main()
 
 	while (!mainWindow.getShouldClose())
 	{
-		
+
 		GLfloat now = glfwGetTime();
 		deltaTime = now - lastTime;
 		deltaTime += (now - lastTime) / limitFPS;
@@ -341,11 +341,11 @@ int main()
 		uniformProjection = shaderList[0].getProjectLocation();
 		uniformView = shaderList[0].getViewLocation();
 		uniformColor = shaderList[0].getColorLocation();
-		
 
-	
+
+		/*
 		//articulacion1 hasta articulación5 sólo son puntos de rotación o articulación, en este caso no dibujaremos esferas que los representen
-				
+
 		//Creacion de la base piramide cuadrangularrr
 		model = glm::mat4(1.0);
 		model = glm::translate(model, glm::vec3(0.0f, 4.5f, -4.5f));
@@ -363,7 +363,6 @@ int main()
 		modelaux = model;
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion5()), glm::vec3(0.0f, 0.0f, 1.0f));
 
-		//dibujar una pequeña esf
 		//llanta
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -375,8 +374,8 @@ int main()
 		model = modelaux;
 
 
-// ARTICULACION LLANTA 2
-		
+		// ARTICULACION LLANTA 2
+
 		model = glm::translate(model, glm::vec3(4.0f, 0.0f, 0.0f));
 		modelaux = model;
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion6()), glm::vec3(0.0f, 0.0f, 1.0f));
@@ -390,7 +389,7 @@ int main()
 		meshList[2]->RenderMeshGeometry();
 		model = modelaux;
 
-// ARTICULACION LLANTA 3
+		// ARTICULACION LLANTA 3
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -4.0f));
 
 		modelaux = model;
@@ -407,12 +406,10 @@ int main()
 		meshList[2]->RenderMeshGeometry();
 		model = modelaux;
 
-// ARTICULACION LLANTA 4
+		// ARTICULACION LLANTA 4
 		model = glm::translate(model, glm::vec3(-4.0f, 0.0f, 0.0f));
 		modelaux = model;
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion8()), glm::vec3(0.0f, 0.0f, 1.0f));
-		
-
 
 		//dibujar una pequeña esfera
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
@@ -434,7 +431,7 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		model = modelaux;
 		meshList[0]->RenderMesh();
-		
+
 
 		// SE EMPIEZA EL DIBUJO DEL BRAZO
 		//articulación 1
@@ -456,8 +453,8 @@ int main()
 		model = glm::rotate(model, glm::radians(135.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		modelaux = model;
 		model = glm::scale(model, glm::vec3(5.0f, 1.0f, 1.0f));
-		
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));		
+
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		//la línea de proyección solo se manda una vez a menos que en tiempo de ejecución
 		//se programe cambio entre proyección ortogonal y perspectiva
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
@@ -480,7 +477,7 @@ int main()
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color));
 		sp.render();
 		model = modelaux;
-		
+
 		//segundo brazo
 		model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
 
@@ -509,7 +506,7 @@ int main()
 
 
 		// Tercer brazo 
-		model = glm::translate(model, glm::vec3( 2.5f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(2.5f, 0.0f, 0.0f));
 		//model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		modelaux = model;
 		model = glm::scale(model, glm::vec3(5.0f, 1.0f, 1.0f));
@@ -522,7 +519,7 @@ int main()
 
 		//cuarta articulacion 
 		//articulación 3 extremo derecho del segundo brazo
-		model = glm::translate(model, glm::vec3( 2.2f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(2.2f, 0.0f, 0.0f));
 		model = glm::rotate(model, glm::radians(-135.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::rotate(model, glm::radians(mainWindow.getarticulacion4()), glm::vec3(0.0f, 1.0f, 0.0f));
 		modelaux = model;
@@ -545,12 +542,320 @@ int main()
 		color = glm::vec3(0.52f, 0.2f, 0.79f);
 		glUniform3fv(uniformColor, 1, glm::value_ptr(color)); //para cambiar el color del objetos
 		meshList[0]->RenderMesh();
-
+		*/
 		// Crear instancias para completar el brazo y  la cabina. Imporante considerar que la cabina es el nodo padre. 
 		//La cabina y el brazo deben de estar unidos a la cabina 
-
-
 		
+
+//torso jirafa
+model = glm::mat4(1.0);
+model = glm::translate(model, glm::vec3(0.0f, 4.5f, -4.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(4.5f, 4.0f, 2.5f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+// ARTICULACION muslo 1
+glm::mat4 modelBase = model;
+model = glm::translate(model, glm::vec3(-3.0f, -1.75f, 2.0f));
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion5()), glm::vec3(0.0f, 0.0f, 1.0f));
+
+//muslo1
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.0f, 0.5f, 2.2f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+//rotación alrededor de la articulación que une con la cabina
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion4()), glm::vec3(0.0f, 0.0f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// pantorrilla 1
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.9f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.7f, 0.5f, 1.8f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+model = modelBase;
+
+// ARTICULACION muslo 2
+modelBase = model;
+model = glm::translate(model, glm::vec3(3.6f, -1.4f, 2.0f));
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion6()), glm::vec3(0.0f, 0.0f, 1.0f));
+
+//dibujar una pequeña esfera
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.0f, 0.5f, 2.2f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+//muslo 2
+model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+//rotación alrededor de la articulación que une con la cabina
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion3()), glm::vec3(0.0f, 0.0f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// pantorrilla 2
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.9f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.7f, 0.5f, 1.8f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+model = modelBase;
+
+// ARTICULACION muslo 3
+modelBase = model;
+model = glm::translate(model, glm::vec3(-3.0f, -1.75f, -2.0f));
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion7()), glm::vec3(0.0f, 0.0f, 1.0f));
+
+//dibujar una pequeña esfera
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.0f, 0.5f, 2.2f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+//muslo 3
+model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+//rotación alrededor de la articulación que une con la cabina
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion2()), glm::vec3(0.0f, 0.0f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// pantorrilla 3
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.9f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.7f, 0.5f, 1.8f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+model = modelBase;
+
+
+// ARTICULACION muslo 4
+modelBase = model;
+model = glm::translate(model, glm::vec3(3.6f, -1.4f, -2.0f));
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion8()), glm::vec3(0.0f, 0.0f, 1.0f));
+
+//muslo 4
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.0f, 0.5f, 2.2f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+// SEgunada articulacion primer pierna
+model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, -2.5f, 0.0f));
+//rotación alrededor de la articulación que une con la cabina
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion1()), glm::vec3(0.0f, 0.0f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// pantorrilla 4
+model = glm::rotate(model, glm::radians(90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 1.9f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.7f, 0.5f, 1.8f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+model = modelBase;
+
+
+model = glm::translate(model, glm::vec3(-3.2f, 2.0f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// Cuello jirafa
+model = glm::rotate(model, glm::radians(-45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+model = glm::translate(model, glm::vec3(-3.4f, .35f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(4.0f, 2.8f, 1.5f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+model = glm::translate(model, glm::vec3(-2.2f, 2.5f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// cabeza
+model = glm::translate(model, glm::vec3(-2.2f, 0.0f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(4.5f, 2.5f, 2.5f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[0]->RenderMeshGeometry();
+model = modelaux;
+// ojos
+model = glm::translate(model, glm::vec3(-0.2f, 1.5f, -1.5f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.4f, 0.4f, 0.4f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(1.0f, 1.0f, 1.0f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+model = glm::translate(model, glm::vec3(0.0f, 0.0f, 3.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.4f, 0.4f, 0.4f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(1.0f, 1.0f, 1.0f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+// cuernitos 
+model = glm::translate(model, glm::vec3(1.9f, 0.0f, -2.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.3f, 1.8f, 0.3f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+model = glm::translate(model, glm::vec3(0.0f, 0.9f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+
+model = glm::translate(model, glm::vec3(0.0f, -0.9f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.3f, 1.8f, 0.3f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+model = glm::translate(model, glm::vec3(0.0f, 0.9f, 0.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = modelaux;
+
+model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(-0.6f, -0.2f, 1.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.4f, 2.8f, 0.4f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[3]->RenderMeshGeometry();
+model = modelaux;
+
+model = glm::rotate(model, glm::radians(270.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.0f, 2.0f, -2.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.4f, 2.8f, 0.4f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[3]->RenderMeshGeometry();
+model = modelaux;
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+//la línea de proyección solo se manda una vez a menos que en tiempo de ejecución
+//se programe cambio entre proyección ortogonal y perspectiva
+glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+
+model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(13.f, -8.5f, 1.5f));
+model = glm::rotate(model, glm::radians(mainWindow.getarticulacion9()), glm::vec3(1.0f, 0.0f, 0.0f));
+
+modelaux = model;
+model = glm::scale(model, glm::vec3(1.f, 1.f, 1.f));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+color = glm::vec3(0.545f, 0.270f, 0.074f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+sp.render();
+model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+model = glm::translate(model, glm::vec3(0.2f, 0.0f, 3.0f));
+modelaux = model;
+model = glm::scale(model, glm::vec3(0.5f, 0.5f, 4.0f));
+color = glm::vec3(255.3f, 255.3f, 0.3f);
+glUniform3fv(uniformColor, 1, glm::value_ptr(color));
+glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+meshList[2]->RenderMeshGeometry();
+model = modelaux;
+
+
+//articulación 2
+
+
 
 		glUseProgram(0);
 		mainWindow.swapBuffers();
